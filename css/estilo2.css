@@ -1,6 +1,6 @@
 *
 {
-	font: 16px/19px "Lucida Sans Unicode","Lucida Sans", "Bitstream Vera Sans", "DejaVu Sans";
+	font: 18px/21px "Fira Sans", sans-serif;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -34,7 +34,7 @@ sub, sup {font-size: 10px;}
 	text-indent:-9999px;
 	width:15px;
 	height:15px;
-	
+
 }
 
 .esperando .input_radio .radio { background-position: -30px 0 !important; }
@@ -52,7 +52,7 @@ sub, sup {font-size: 10px;}
 	width:20px;
 	height:20px;
 	margin-right: 10px;
-	
+
 }
 
 .check_checado { background-position: 0 0; }
@@ -61,14 +61,14 @@ sub, sup {font-size: 10px;}
 
 /* definições básicas */
 
-.ancora 
+.ancora
 {
 	list-style-type: none !important;
 	margin: 0 !important;
 	padding: 0 !important;
 	text-decoration: none !important;
 	border: none !important;
-}	
+}
 
 .botao {height:29px; font-size: 14px; margin-right:7px; padding-bottom: 2px; text-align:center; border: 2px outset #CCC;}
 .botao:active{border: 2px inset #CCC;}
@@ -112,7 +112,7 @@ sub, sup {font-size: 10px;}
 	height: auto;
 	margin-left: -20px;
 	width: 100%;
-	z-index: 1;	
+	z-index: 1;
 }
 
 #fichas
@@ -153,20 +153,20 @@ sub, sup {font-size: 10px;}
 
 .parte_feita a
 {
-	
+
 	background: url(../img_layout/parte_feita.gif) no-repeat;
 	z-index: 3;
 }
 
 .parte_quase_feita a
 {
-	
+
 	background: url(../img_layout/parte_quase_feita.gif) no-repeat;
 	z-index: 3;
 }
 
 
-.parte_atual 
+.parte_atual
 {
 	font-size: 18px;
 	width: 31px;
@@ -400,7 +400,7 @@ sub, sup {font-size: 10px;}
 	width: 240px;
 	text-align: right;
 	margin-top: 5px;
-	
+
 }
 
 #links a
@@ -727,7 +727,7 @@ p .formula
 
 #questoes .questao .selecionada .ajuda:hover, #questoes .questao .selecionada .ajuda.ativo
 {
-	background-position: bottom center; 
+	background-position: bottom center;
 }
 
 
@@ -877,7 +877,7 @@ p .formula
 	width: 245px;
 	height: 261px;
 	background: url(../img_layout/calc.gif) no-repeat;
-	position: fixed; 
+	position: fixed;
 	bottom: 58px;
 	left: 39px;
 	z-index: 1201;
@@ -902,7 +902,7 @@ p .formula
 
 #link_continuar.ativado
 {
-	background: url(../img_layout/continuar-amarelo-ativado.gif) no-repeat;	
+	background: url(../img_layout/continuar-amarelo-ativado.gif) no-repeat;
 }
 
 #rodape
