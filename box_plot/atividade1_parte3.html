@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		
+		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal"/>
+		<link rel="alternate stylesheet"  type="text/css" href="css/estilo2.css" title="grande" />
+		
+		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/calculadora.css" media="screen, projection" />
+		<!--[if IE 7]>
+			<link rel="stylesheet" type="text/css" href="css/estilo_ie7.css" media="screen, projection" />
+		<![endif]-->
+		<!--[if lte IE 6]>	
+			<link rel="stylesheet" type="text/css" href="css/estilo_ie6.css" media="screen, projection" />
+		<![endif]-->
+		
+		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
+		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/popup.js"></script>
+		<script type="text/javascript" src="scripts/notas.js"></script>
+		<script type="text/javascript" src="scripts/bloco.js"></script>
+		<script type="text/javascript" src="scripts/calculadora.js"></script>
+		<script type="text/javascript" src="scripts/rolagem.js"></script>
+		
+		
+		<!-- O arquivo referencias.js e curiosidades.js devem ser incluídos depois do interface -->
+		<script type="text/javascript" src="scripts/interface.js"></script>
+		<script type="text/javascript" src="scripts/referencias.js"></script>
+		<script type="text/javascript" src="scripts/curiosidades.js"></script>
+
+		<script type="text/javascript" src="scripts/funcoes_gerais.js"></script>
+		<script type="text/javascript" src="scripts/tabela_funcoes.js"></script>
+		<script type="text/javascript" src="scripts/frequencias.js"></script>
+		<script type="text/javascript" src="scripts/atividade1_correcao.js"></script>
+		<script type="text/javascript" src="scripts/atividade1_conteudo.js"></script>
+		<script type="text/javascript" src="scripts/inputs.js"></script>
+
+		<script type="text/javascript">
+			var PosicaoAtual = {Atividade:1, Parte: 2};
+			var ProximaParte = 'mapa.html';
+	
+			var Links = $H({
+			});
+
+		</script>
+
+		<title>Medidas do Corpo: Box Plot</title>
+	</head>
+	<body>
+	
+	<!--
+	Nunca crie um "onload" aqui, use a Classe Event do Prototype: Event.observe(window, 'load', funcaoAqui);
+	Veja um exemplo no arquivo exemplo_correcao.js
+	-->
+		<div id="container">
+			<div id="cabecalho">
+				<div id="onde_estou">
+					<div class="numero_atividade">1</div>
+					<h1>Medidas do Corpo</h1> <img src="img_layout/setinha-cabecalho.gif" alt=""/> <h2>Tabela de dados</h2>
+				</div>
+				<div id="logo"></div>
+				<div id="links">
+					<a id="mapa" href="mapa.html">Mapa</a>
+					<a href="introducao.html">Introdução</a>
+					<a href="index.html">Início</a>
+				</div>
+				
+				<div class="limpador"></div>
+			</div>
+			<!-- Por enquanto o controle de partes trancadas não será implementado-->
+			<ul id="partes">
+				
+			</ul>
+			
+			<div id="software">
+				<div id="conteudo">
+					<div class="salva_local">
+						<object id="SalvaLocal" name="SalvaLocal" type="application/x-shockwave-flash" data="applets/SalvaLocal.swf" width="1" height="1">
+						<param name="menu" value="false" />
+						<param name="movie" value="applets/SalvaLocal.swf" />
+						</object>
+					</div>					
+									
+					<div class="texto_solto">
+						<p>Nas duas próximas atividades, será analisada a dependência entre uma variável qualitativa e uma quantitativa mediante o chamado “gráfico de caixa”, ou ”box plot”. Com ele, pode-se comparar, por exemplo, o peso de meninos e meninas recém-nascidos, a quantidade de chuva entre os meses do ano, ou, ainda, a altura entre homens e mulheres. Você poderá construir agora box plots usando os dados digitados anteriormente.</p>
+						<p>A tabela ao lado contém algumas medidas resumos das variáveis “altura” e “número do calçado” para meninos e meninas, obtidas com os dados que você preencheu inicialmente. Consulte-a no seu bloco de notas a qualquer momento, as informações que ela contém serão uteis na obtenção do box plot.</p>
+
+
+					</div>
+					
+					<!--
+					 A caixa de valor inicial não é obrigatória, ela é usada quando o software precisa de algum parametro
+					para iniciar, após iniciar, deve-se adicionar a classe "desabilitada" na div e desabilitar o input também.
+					É possível colocar mais de um item a ser inicializado por parte, mas somente a primeira terá o titulo em <h2>;
+					-->
+
+					<div id="questoes">
+					
+						<!--
+						Para o Script se localizar, essa div "texto_genérico" é necessária. Caso não tenha texto aqui, deixe ela vazia.
+						Coloque aqui qualquer texto genérico de instruções e teoria.
+						-->
+						<div id="texto_generico">
+						</div>
+						
+	
+						
+						<!-- Aqui vão ser colocadas as questões, via JavaScript.-->
+						
+						<div class="limpador"></div>
+						
+						<a id="link_continuar">
+							<span class="escondido">Continuar</span>
+						</a>
+						<div class="limpador"></div>
+					</div>
+				</div>
+			</div>
+			<br class="limpador" />
+			<div id="rodape">
+				<a href="http://m3.mat.br">Sobre o Matemática Multimídia</a>
+			</div>
+		</div>
+		<div id="applet">
+			<div id="borda_applet" class="altura_applet_3 sem_fundo">
+						<div id="dadosEntrada" style="overflow:auto;"> 
+							<table border="0">
+								<tr>
+									<td valign="top">
+										<table id="tabelaDados" name="tabelaDados" class="tabela">
+											<THEAD>
+												<tr>
+													<th colspan=1 class="largura3" style="width: 60px;"> </th>
+													<th colspan=2 class="largura3" style="width: 155px;">Altura</th>
+													<th colspan=2 class="largura3" style="width: 155px;">Calçado</th>
+												</tr>
+											</THEAD>
+											<TBODY>
+												<tr>
+													<td class="largura3"> </td>
+													<td class="largura3">Gênero Feminino</td>
+													<td class="largura3">Gênero Masculino</td>
+													<td class="largura3">Gênero Feminino</td>
+													<td class="largura3">Gênero Masculino</td>
+												</tr>
+												<tr>
+													<td class="largura3">Mínimo</td>
+													<td class="largura3"><div id="minF"></div></td>
+													<td class="largura3"><div id="minM"></div></td>
+													<td class="largura3"><div id="minCalcadoF"></div></td>
+													<td class="largura3"><div id="minCalcadoM"></div></td>
+												</tr>
+												<tr>
+													<td class="largura3">Quantil 25%</td>
+													<td class="largura3"><div id="Q25F"></div></td>
+													<td class="largura3"><div id="Q25M"></div></td>
+													<td class="largura3"><div id="Q25CalcadoF"></div></td>
+													<td class="largura3"><div id="Q25CalcadoM"></div></td>
+												</tr>
+												<tr>
+													<td class="largura3">Mediana</td>
+													<td class="largura3"><div id="medianaF"></div></td>
+													<td class="largura3"><div id="medianaM"></div></td>
+													<td class="largura3"><div id="medianaCalcadoF"></div></td>
+													<td class="largura3"><div id="medianaCalcadoM"></div></td>
+												</tr>
+												<tr>
+													<td class="largura3">Média</td>
+													<td class="largura3"><div id="mediaF"></div></td>
+													<td class="largura3"><div id="mediaM"></div></td>
+													<td class="largura3"><div id="mediaCalcadoF"></div></td>
+													<td class="largura3"><div id="mediaCalcadoM"></div></td>
+												</tr>
+												<tr>
+													<td class="largura3">Quantil 75%</td>
+													<td class="largura3"><div id="Q75F"></div></td>
+													<td class="largura3"><div id="Q75M"></div></td>
+													<td class="largura3"><div id="Q75CalcadoF"></div></td>
+													<td class="largura3"><div id="Q75CalcadoM"></div></td>
+												</tr>
+												<tr>
+													<td class="largura3">Máximo</td>
+													<td class="largura3"><div id="maxF"></div></td>
+													<td class="largura3"><div id="maxM"></div></td>
+													<td class="largura3"><div id="maxCalcadoF"></div></td>
+													<td class="largura3"><div id="maxCalcadoM"></div></td>
+												</tr>
+											</TBODY>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</div>
+				
+				<div class="canto sup_esq"></div>
+				<div class="canto sup_dir"></div>
+				<div class="canto inf_esq"></div>
+				<div class="canto inf_dir"></div>
+				<div id="associacao"></div>
+			</div>
+			<div id="comandos">
+			</div>
+		</div>
+
+		<div id="associado"></div>
+		
+		<div id="ferramentas">
+			<a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
+			<a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
+			<a href="javascript:;" id="link_calculadora" onclick="javascript:calculadora();"><span class="escondido">calculadora</span></a>
+			<a href="javascript:setActiveStyleSheet('grande');" id="link_acessibilidade"><span class="escondido">acessibilidade</span></a>
+		</div>
+		<div id="calc" class="escondido"></div>
+	</body>
+</html>

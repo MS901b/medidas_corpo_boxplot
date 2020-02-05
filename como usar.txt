@@ -1,0 +1,18 @@
+COMO USAR
+
+Para acessar os softwares do Projeto M³, rode o aplicativo java AcessarRecursos.jar, e ele listará todos os softwares disponíveis nas subpastas de seu diretório. Basta selecionar o que desejar para ter acesso ao software ou ao Guia do Professor.
+A seguir, alguns esclarecimentos específicos para alguns sistemas operacionais:
+
+WINDOWS
+
+Se você estiver em ambiente Windows, pode rodar diretamente o aplicativo AcessarRecursos.exe.
+
+LINUX
+
+Algumas distribuições linux não executam aplicativo java diretamente. Nesses casos, pode-se utilizar o comando "java -jar AcessarRecursos.jar" na pasta onde este arquivo estiver disponível.
+É necessário ter a Java Virtual Machine 1.6+ instalada em seu computador. Para instalá-la acesse www.java.com/getjava
+
+MACINTOSH
+
+Caso o clique no arquivo AcessarRecursos.jar não disparar o aplicativo apropriadamente, execute-o através do comando "java -jar AcessarRecursos.jar".
+É necessário ter a Java Virtual Machine 1.6+ instalada em seu computador. Para instalá-la acesse www.java.com/getjava

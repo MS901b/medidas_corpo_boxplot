@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<link rel="stylesheet" type="text/css" href="css/abertura.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
+		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
+		<script type="text/javascript" src="scripts/protoaculous.js"></script>
+		<script type="text/javascript" src="scripts/popup.js"></script>
+		<script type="text/javascript" src="scripts/funcoes_gerais.js"></script>
+		<script type="text/javascript" src="scripts/frequencias.js"></script>
+		<script type="text/javascript" src="scripts/tabela_funcoes.js"></script>
+		<script type="text/javascript" src="scripts/funcoes_estilizadas.js"></script>
+
+		<title>Medidas do Corpo: Box Plot</title>
+
+		<script type="text/javascript">
+			var nomeSoft = 'estat2';
+			var Perguntas = $H({
+				limpar: {
+					conteudo: '<p>Isso irá apagar todos os dados armazenados, como respostas guardadas, para essa unidade.</p><p style="margin-top:10px;">Você tem certeza?</p>',
+					layout: ['seta_cima','direita'],
+					largura: 10,
+					callback: resetar,
+					// se o usuário clicar em 'Sim', o popup chamará a funcao funcao_pede na qual this.resultado será 'sim'
+					// Veja que essa função deve estar definida, ou ser definida nesse exato momento (como no exemplo "pede2")
+					respostas: [{sim: 'Sim'}, {nao: 'Não'}]
+				}
+			});
+		
+			function resetar() {
+				if (this.resultado == 'sim') {
+
+				$('Mapinha').ApagaTudo('estat2');
+
+					$('Mapinha').Salva(nomeSoft, 'atividade_1', '1');
+					$('Mapinha').Salva(nomeSoft, 'atividade_2', '1');
+					$('Mapinha').Salva(nomeSoft, 'atividade_3', '1');
+
+
+					var existeTabela = eval(getRespSoft("tabela_principal", "estat-dados"));
+					
+					if (existeTabela != null) {
+						setRespSoft('atividade_1',1,'estat2');
+						setRespSoft('atividade_2',1,'estat2');
+						setRespSoft('atividade_3',1,'estat2');
+	
+						montaVetoresDados();
+						calculaDadosAltura();
+						calculaDadosCalcado();
+					} else {
+						setRespSoft('atividade_2',0,'estat2');
+						setRespSoft('atividade_3',0,'estat2');
+					}
+
+					location.reload();
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="cabecalho">
+				<div id="onde_estou">
+					<h1>Medidas do Corpo: Box Plot</h1> <img src="img_layout/setinha-cabecalho.gif" alt=""/> <h2>Mapa de atividades</h2> 
+				</div>
+				<div id="logo"></div>
+				<div id="links">
+					<span>Mapa</span>
+					<a href="introducao.html">Introdução</a>
+					<a href="index.html">Início</a>
+				</div>
+				
+				<br class="limpador" />
+			</div>
+			
+			<div id="abertura">
+				<div id="conteudo">
+					<a id="limpar" style="position:absolute; right:20px; top: 20px; color:RGB(210,25,42); font-weight:bold; ">Limpar dados</a>
+					<object id="Mapinha" name="Mapinha" type="application/x-shockwave-flash" data="applets/Mapinha.swf" width="960" height="480" wmode="transparent">
+						<param name="menu" value="false" />
+						<param name="movie" value="applets/Mapinha.swf" />
+						<param name="allowScriptAccess" value="sameDomain" />
+						<param name="wmode" value="transparent">
+					</object>
+					<object id="SalvaLocal" name="SalvaLocal" type="application/x-shockwave-flash" data="applets/SalvaLocal.swf" width="1" height="1">
+						<param name="menu" value="false" />
+						<param name="movie" value="applets/SalvaLocal.swf" />
+					</object>
+				</div>
+			</div>
+			<br class="limpador" />
+			<div id="rodape">
+				<a href="http://m3.mat.br" target="_blank">Sobre o Matemática Multimídia</a>
+			</div>
+		</div>
+	</body>
+</html>

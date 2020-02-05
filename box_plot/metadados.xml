@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recurso>
+    <titulo>Medidas do Corpo: Box plot</titulo>
+    <descricao>Neste software, o aluno irá estudar um exemplo de estatística descritiva utilizando medidas de três variáveis: gênero, altura e número do calçado. Vamos explorar a análise da relação entre duas variáveis, uma qualitativa e outra quantitativa, através do chamado gráﬁco de Box Plot.</descricao>
+    <estado>finalizado</estado>
+	<imagem>box_plot.jpg</imagem>
+	<tipo>Software Educacional, Animação e Simulação</tipo>
+	<objetivos>Analisar representação gráﬁca de dados estatísticos; Familiarizar o aluno com gráﬁco de Box Plot e análise estatística bivariada; Utilizar o conceito de quantil.</objetivos>
+	<observacoes>É necessário plugin Flash 9.0 ou mais recente e máquina Java 1.6 ou mais recente.</observacoes>
+	<nivel>Ensino Médio</nivel>
+	<componente>Matemática</componente>
+	<temas>Análise de Dados e Probabilidade</temas>
+	<autores>Laura Leticia Ramos Rifo</autores>
+	<palavras_chaves>Unicamp, Projeto M³, software educacional, matemática,</palavras_chaves>
+	<assunto>Estatística, Interpretação de Gráﬁcos e Dados; Gráﬁcos bivariados, Box Plot; Quantis de uma variável quantitativa.</assunto>
+</recurso>
+
+
+

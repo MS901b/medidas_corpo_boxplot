@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<software nome="estat2">
+	
+	<!-- 1: 1a Atividade -->
+	<item>
+		<tipo>atividade</tipo>
+		<rotulo>1</rotulo>
+		<nome>Tabela de Dados</nome>
+		<descricao>Nesta atividade, você deve preencher uma tabela com dados dos seus colegas de sala de aula.  E poderá ver vários valores de medidas resumos do seu conjunto de dados, com média, mediana, quantil 25%, e quantil 75%.</descricao>
+		<posicao>
+			<coluna>1</coluna>
+			<altura>1</altura>
+		</posicao>
+	</item>
+	
+	<!-- 2: 2a Atividade -->
+	<item>
+		<tipo>atividade</tipo>
+		<rotulo>2</rotulo>
+		<nome>Gráfico Box Plot: Altura</nome>
+		<descricao>Nesta atividade, você vai construir o box plot da altura das meninas e o dos meninos, podendo comparar visualmente as alturas em cada um dos dois grupos.</descricao>
+		<posicao>
+			<coluna>2</coluna>
+			<altura>2</altura>
+		</posicao>
+		<ligacoes>
+			<com>1</com>
+		</ligacoes>
+	</item>
+	
+	<!-- 3: 3a Atividade -->
+	<item>
+		<tipo>atividade</tipo>
+		<rotulo>3</rotulo>
+		<nome>Gráfico Box Plot: Número de Calçado</nome>
+		<descricao>Nesta atividade, você vai construir o box plot do número de calçado das meninas e dos meninos, podendo comparar visualmente os valores em cada um dos dois grupos.</descricao>
+		<posicao>
+			<coluna>2</coluna>
+			<altura>-1</altura>
+		</posicao>
+		<ligacoes>
+			<com>1</com>
+		</ligacoes>
+	</item>
+
+</software>
