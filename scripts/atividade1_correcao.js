@@ -1,4 +1,4 @@
-var SalvaLocalLoaded = false;
+var SalvaLocalLoaded = true;
 var GGBLoaded = false;
 var HTMLLoaded = false;
 
