@@ -35,11 +35,11 @@ Event.observe(window, 'load', function()
 				if(a.getAttribute("title") == 'grande') a.disabled = false;
 			}
 		}
-		$('link_acessibilidade').href = 'javascript:setActiveStyleSheet("normal");';
+//		$('link_acessibilidade').href = 'javascript:setActiveStyleSheet("normal");';
 	}
 	else
 	{
-		$('link_acessibilidade').href = 'javascript:setActiveStyleSheet("grande");';
+//		$('link_acessibilidade').href = 'javascript:setActiveStyleSheet("grande");';
 	}
 });
 
@@ -2155,11 +2155,6 @@ function setActiveStyleSheet(title)
 		}
 	}
 	
-	if (title == 'grande')
-		$('link_acessibilidade').href = 'javascript:setActiveStyleSheet("normal");';
-	else
-		$('link_acessibilidade').href = 'javascript:setActiveStyleSheet("grande");';
-
 }
 
 function createCookie(name,value,days) {
