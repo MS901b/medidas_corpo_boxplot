@@ -2,7 +2,7 @@
 <software nome="estat2">
 	
 	<!-- 1: 1a Atividade -->
-	<item>
+	<item><id>a1</id>
 		<tipo>atividade</tipo>
 		<rotulo>1</rotulo>
 		<nome>Tabela de Dados</nome>
@@ -14,7 +14,7 @@
 	</item>
 	
 	<!-- 2: 2a Atividade -->
-	<item>
+	<item><id>a2</id>
 		<tipo>atividade</tipo>
 		<rotulo>2</rotulo>
 		<nome>Gráfico Box Plot: Altura</nome>
@@ -24,12 +24,12 @@
 			<altura>2</altura>
 		</posicao>
 		<ligacoes>
-			<com>1</com>
+			<com>a1</com>
 		</ligacoes>
 	</item>
 	
 	<!-- 3: 3a Atividade -->
-	<item>
+	<item><id>a3</id>
 		<tipo>atividade</tipo>
 		<rotulo>3</rotulo>
 		<nome>Gráfico Box Plot: Número de Calçado</nome>
@@ -39,7 +39,7 @@
 			<altura>-1</altura>
 		</posicao>
 		<ligacoes>
-			<com>1</com>
+			<com>a1</com>
 		</ligacoes>
 	</item>
 
