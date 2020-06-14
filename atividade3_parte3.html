@@ -1,185 +1,196 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns = "http://www.w3.org/1999/xhtml"  xml:lang = "pt-br"  lang = "pt-br">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-    	<meta name=viewport content="width=device-width,initial-scale=1">
-		<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
 
-		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal"/>
-		<link rel="alternate stylesheet"  type="text/css" href="css/estilo2.css" title="grande" />
-		
-		<link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
-		<link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
-		<link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
-		<link rel="stylesheet" type="text/css" href="css/calculadora.css" media="screen, projection" />
-		<!--[if IE 7]>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal" />
+    <link rel="alternate stylesheet" type="text/css" href="css/estilo2.css" title="grande" />
+
+    <link rel="stylesheet" type="text/css" href="css/popup.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/notas.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/bloco.css" media="screen, projection" />
+    <link rel="stylesheet" type="text/css" href="css/calculadora.css" media="screen, projection" />
+    <!--[if IE 7]>
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie7.css" media="screen, projection" />
 		<![endif]-->
-		<!--[if lte IE 6]>	
+    <!--[if lte IE 6]>	
 			<link rel="stylesheet" type="text/css" href="css/estilo_ie6.css" media="screen, projection" />
 		<![endif]-->
-		
-		<script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
-		<script type="text/javascript" src="scripts/protoaculous.js"></script>
-		<script type="text/javascript" src="scripts/salvaLocal.js"></script>
-		<script type="text/javascript" src="scripts/popup.js"></script>
-		<script type="text/javascript" src="scripts/notas.js"></script>
-		<script type="text/javascript" src="scripts/bloco.js"></script>
-		<script type="text/javascript" src="scripts/calculadora.js"></script>
-		<script type="text/javascript" src="scripts/rolagem.js"></script>
-		
-		
-		<!-- O arquivo referencias.js e curiosidades.js devem ser incluídos depois do interface -->
-		<script type="text/javascript" src="scripts/interface.js"></script>
-		<script type="text/javascript" src="scripts/referencias.js"></script>
-		<script type="text/javascript" src="scripts/curiosidades.js"></script>
-		
-		<!-- O arquivo exemplo_correcao.js que contem as funções que corrigem, deve ser incluido antes do exemplo_conteudo.js-->
-		<!-- O arquivo inputs.js deve ser incluído por último -->
-		<script type="text/javascript" src="scripts/frequencias.js"></script>
-		<script type="text/javascript" src="scripts/funcoes_gerais.js"></script>
-		<script type="text/javascript" src="scripts/atividade3_correcao.js"></script>
-		<script type="text/javascript" src="scripts/atividade3_conteudo.js"></script>
 
-		<script type="text/javascript" src="scripts/inputs.js"></script>
-		<script type="text/javascript">
-			var PosicaoAtual = {Atividade:3, Parte: 2};
-			var ProximaParte = 'mapa.html';
-			var Links = $H({
-				concentrado: {
-					conteudo: 'Quanto menor a altura do retângulo do box plot maior é a concentração da amostra, já que metade da amostra se encontra no intervalo entre o primeiro e o terceiro quartil.',
-					layout: ['seta_baixo', 'direita'],
-					largura: 15
-				},
-				variabilidade: {
-					conteudo: 'Quanto menor a altura do retângulo do box plot maior será a concentração da amostra, já que metade dos valores se encontram neste intervalo. Quanto maior a diferença entre o máximo e o mínimo valor da amostra maior será sua variabilidade, pois isto indica a amplitude dos dados.',
-					layout: ['seta_baixo', 'direita'],
-					largura: 15
-				}
-			});
-		</script>
-		
-		<title>Medidas do Corpo: Box Plot</title>
-	</head>
-	<body>
-	
-	<!--
+    <script type="text/javascript" src="scripts/AC_RunActiveContent.js"></script>
+    <script type="text/javascript" src="scripts/protoaculous.js"></script>
+    <script type="text/javascript" src="scripts/salvaLocal.js"></script>
+    <script type="text/javascript" src="scripts/popup.js"></script>
+    <script type="text/javascript" src="scripts/notas.js"></script>
+    <script type="text/javascript" src="scripts/bloco.js"></script>
+    <script type="text/javascript" src="scripts/calculadora.js"></script>
+    <script type="text/javascript" src="scripts/rolagem.js"></script>
+
+
+    <!-- O arquivo referencias.js e curiosidades.js devem ser incluídos depois do interface -->
+    <script type="text/javascript" src="scripts/interface.js"></script>
+    <script type="text/javascript" src="scripts/referencias.js"></script>
+    <script type="text/javascript" src="scripts/curiosidades.js"></script>
+
+    <!-- O arquivo exemplo_correcao.js que contem as funções que corrigem, deve ser incluido antes do exemplo_conteudo.js-->
+    <!-- O arquivo inputs.js deve ser incluído por último -->
+    <script type="text/javascript" src="scripts/frequencias.js"></script>
+    <script type="text/javascript" src="scripts/funcoes_gerais.js"></script>
+    <script type="text/javascript" src="scripts/atividade3_correcao.js"></script>
+    <script type="text/javascript" src="scripts/atividade3_conteudo.js"></script>
+
+    <script type="text/javascript" src="scripts/inputs.js"></script>
+    <script type="text/javascript">
+        var PosicaoAtual = {
+            Atividade: 3,
+            Parte: 2
+        };
+        var ProximaParte = 'mapa.html';
+        var Links = $H({
+            concentrado: {
+                conteudo: 'Quanto menor a altura do retângulo do box plot maior é a concentração da amostra, já que metade da amostra se encontra no intervalo entre o primeiro e o terceiro quartil.',
+                layout: ['seta_baixo', 'direita'],
+                largura: 15
+            },
+            variabilidade: {
+                conteudo: 'Quanto menor a altura do retângulo do box plot maior será a concentração da amostra, já que metade dos valores se encontram neste intervalo. Quanto maior a diferença entre o máximo e o mínimo valor da amostra maior será sua variabilidade, pois isto indica a amplitude dos dados.',
+                layout: ['seta_baixo', 'direita'],
+                largura: 15
+            }
+        });
+    </script>
+
+    <title>Medidas do Corpo: Box Plot</title>
+</head>
+
+<body>
+
+    <!--
 	Nunca crie um "onload" aqui, use a Classe Event do Prototype: Event.observe(window, 'load', funcaoAqui);
 	Veja um exemplo no arquivo exemplo_correcao.js
 	-->
-		<div id="container">
-			<div id="cabecalho">
-				<div id="onde_estou">
-					<div class="numero_atividade">3</div>
-					<h1>Medidas do Corpo: Box Plot</h1> <img src="img_layout/setinha-cabecalho.gif" alt=""/> <h2>Tabela de dados</h2> <h2>Calçado</h2>
-				</div>
-				<div id="logo"></div>
-				<div id="links">
-					<a id="mapa" href="mapa.html">Mapa</a>
-					<a href="introducao.html">Introdução</a>
-					<a href="index.html">Início</a>
-				</div>
-				<div class="limpador"></div>
-			</div>
-			<!-- Por enquanto o controle de  trancadas não será implementado-->
-			<ul id="partes">
-			</ul>
-			
-			<div id="software">
-				<div id="conteudo">
-					<div class="salva_local">
-					</div>
-					<div class="texto_solto">
-						Um box plot fornece várias informações sobre um conjunto de dados. Porém, outra grande utilidade desse tipo de representação é a possibilidade de comparação entre duas categorias. Por exemplo, no quadro ao lado estão os dois gráficos construídos anteriormente. Ambos representam o número do calçado para cada uma das categorias: meninos e meninas.
-					</div>
+    <div id="container">
+        <div id="cabecalho">
+            <div id="onde_estou">
+                <div class="numero_atividade">3</div>
+                <h1>Medidas do Corpo: Box Plot</h1> <img src="img_layout/setinha-cabecalho.gif" alt="" />
+                <h2>Tabela de dados</h2>
+                <h2>Calçado</h2>
+            </div>
+            <div id="logo"></div>
+            <div id="links">
+                <a id="mapa" href="mapa.html">Mapa</a>
+                <a href="introducao.html">Introdução</a>
+                <a href="index.html">Início</a>
+            </div>
+            <div class="limpador"></div>
+        </div>
+        <!-- Por enquanto o controle de  trancadas não será implementado-->
+        <ul id="partes">
+        </ul>
 
-					
-					<!--
+        <div id="software">
+            <div id="conteudo">
+                <div class="salva_local">
+                </div>
+                <div class="texto_solto">
+                    Um box plot fornece várias informações sobre um conjunto de dados. Porém, outra grande utilidade desse tipo de representação é a possibilidade de comparação entre duas categorias. Por exemplo, no quadro ao lado estão os dois gráficos construídos anteriormente.
+                    Ambos representam o número do calçado para cada uma das categorias: meninos e meninas.
+                </div>
+
+
+                <!--
 					 A caixa de valor inicial não é obrigatória, ela é usada quando o software precisa de algum parametro
 					para iniciar, após iniciar, deve-se adicionar a classe "desabilitada" na div e desabilitar o input também.
 					É possível colocar mais de um item a ser inicializado por parte, mas somente a primeira terá o titulo em <h2>;
 					-->
 
-					<div id="questoes">
-						<!--
+                <div id="questoes">
+                    <!--
 						Para o Script se localizar, essa div "texto_genérico" é necessária. Caso não tenha texto aqui, deixe ela vazia.
 						Coloque aqui qualquer texto genérico de instruções e teoria.
 						-->
-						<div id="texto_generico">
-						</div>
-						<div id="parte3_q3"></div>
-						<div id="parte3_q4"></div>
+                    <div id="texto_generico">
+                    </div>
+                    <div id="parte3_q3"></div>
+                    <div id="parte3_q4"></div>
 
-						<div class="caderno">
-							<h2>Responder no caderno</h2>
-							<ol>
-								<li>
-									<h3>Questão 1</h3>
-									<ol>
-										<li class="ultima">
-											<span class="icone_questao">A</span>
-											<p>
-												Que outras características podem ser comparadas a partir da observação dos box plots das duas amostras?
-											</p>
-										</li>
-									</ol>
-								</li>
-							</ol>
-						</div>						
+                    <div class="caderno">
+                        <h2>Responder no caderno</h2>
+                        <ol>
+                            <li>
+                                <h3>Questão 1</h3>
+                                <ol>
+                                    <li class="ultima">
+                                        <span class="icone_questao">A</span>
+                                        <p>
+                                            Que outras características podem ser comparadas a partir da observação dos box plots das duas amostras?
+                                        </p>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
 
-						<a href="javascript:" id="corrigir_tudo">Corrigir todas as questões</a>
-						
-						<a id="link_continuar">
-							<span class="escondido">Continuar</span>
-						</a>
-						<div class="limpador"></div>
-					</div>
-					<!--<div style="height:300px;"></div>-->
-				</div>
-			</div>
-			<br class="limpador" />
-			<div id="rodape">
-				<a href="http://m3.ime.unicamp.br">Sobre o Matemática Multimídia</a>
-			</div>
-		</div>
-		<div id="applet">
-			<div id="borda_applet" class="altura_applet_5 borda sem_fundo">
-				<div id="ggbApplet"></div>
-				<script>
-				var ggbApp = new GGBApplet({"appName": "classic",
-					"width": 519, "height": 380,
-					"filename": "applets/boxplot_figura.ggb",
-					"showResetIcon": "false",
-					"enableRightClick": "false",
-					"showMenuBar": "false",
-					"showToolBar": "false",
-					"showToolBarHelp": "false",
-					"showAlgebraInput": "false",
-					"enableLabelDrags": "false",
-					"enableShiftDragZoom": "false"
-				}, true);
-				window.addEventListener("load", function() {
-					ggbApp.inject('ggbApplet');
-				});
-				</script>
+                    <a href="javascript:" id="corrigir_tudo">Corrigir todas as questões</a>
 
-				<div class="canto sup_esq"></div>
-				<div class="canto sup_dir"></div>
-				<div class="canto inf_esq"></div>
-				<div class="canto inf_dir"></div>
-				<div id="associacao"></div>				
-			</div>
-			<div id="comandos">
-			</div>
-		</div>
-		
-		<div id="associado"></div>
-		
-		<div id="ferramentas">
-			<a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
-			<a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
-		</div>
-		<div id="calc" class="escondido"></div>
-	</body>
+                    <a id="link_continuar">
+                        <span class="escondido">Continuar</span>
+                    </a>
+                    <div class="limpador"></div>
+                </div>
+                <!--<div style="height:300px;"></div>-->
+            </div>
+        </div>
+        <br class="limpador" />
+        <div id="rodape">
+            <a href="http://m3.ime.unicamp.br" target="_blank">Sobre o Matemática Multimídia</a>
+        </div>
+    </div>
+    <div id="applet">
+        <div id="borda_applet" class="altura_applet_5 borda sem_fundo">
+            <div id="ggbApplet"></div>
+            <script>
+                var ggbApp = new GGBApplet({
+                    "appName": "classic",
+                    "width": 519,
+                    "height": 380,
+                    "filename": "applets/boxplot_figura.ggb",
+                    "showResetIcon": "false",
+                    "enableRightClick": "false",
+                    "showMenuBar": "false",
+                    "showToolBar": "false",
+                    "showToolBarHelp": "false",
+                    "showAlgebraInput": "false",
+                    "enableLabelDrags": "false",
+                    "enableShiftDragZoom": "false"
+                }, true);
+                window.addEventListener("load", function() {
+                    ggbApp.inject('ggbApplet');
+                });
+            </script>
+
+            <div class="canto sup_esq"></div>
+            <div class="canto sup_dir"></div>
+            <div class="canto inf_esq"></div>
+            <div class="canto inf_dir"></div>
+            <div id="associacao"></div>
+        </div>
+        <div id="comandos">
+        </div>
+    </div>
+
+    <div id="associado"></div>
+
+    <div id="ferramentas">
+        <a href="javascript:;" onclick="return false;" id="link_notas"><span class="escondido">referencias</span></a>
+        <a href="javascript:;" onclick="return false;" id="link_bloco"><span class="escondido">bloco de notas</span></a>
+    </div>
+    <div id="calc" class="escondido"></div>
+</body>
+
 </html>
