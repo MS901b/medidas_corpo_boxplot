@@ -156,30 +156,26 @@
                 var ggbApp = new GGBApplet({
                     "appName": "classic",
                     "width": 519,
-                    "height": 380,
-                    "filename": "applets/boxplot_figura.ggb",
-                    "showResetIcon": "false",
-                    "enableRightClick": "false",
-                    "showMenuBar": "false",
-                    "showToolBar": "false",
-                    "showToolBarHelp": "false",
-                    "showAlgebraInput": "false",
-                    "enableLabelDrags": "false",
-                    "enableShiftDragZoom": "false"
+                    "height": 457,
+                    "filename": "applets/boxplot_f.ggb",
+                    "showResetIcon": false,
+                    "enableRightClick": false,
+                    "showMenuBar": false,
+                    "showToolBar": false,
+                    "showToolBarHelp": false,
+                    "showAlgebraInput": false,
+                    "enableShiftDragZoom": false,
+                    "useBrowserForJS": true
                 }, true);
                 window.addEventListener("load", function() {
                     ggbApp.inject('ggbApplet');
                 });
             </script>
-
             <div class="canto sup_esq"></div>
             <div class="canto sup_dir"></div>
             <div class="canto inf_esq"></div>
             <div class="canto inf_dir"></div>
             <div id="associacao"></div>
-        </div>
-        <div id="comandos">
-            <input type="checkbox" id="checkBoxA2_P1" onClick="javascript:mostrarLegendaA2_P1();"> Mostrar legenda
         </div>
     </div>
 

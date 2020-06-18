@@ -38,11 +38,11 @@ function InitOnLoad() {
     ];
 
 
-    MeuBloco[2] = '<br>';
-    MeuBloco[3] = '<br>';
-    MeuBloco[4] = '<br>';
-    MeuBloco[5] = 'Tabela do Numero do Calçado';
-    MeuBloco[6] = [
+    //MeuBloco[2] = '<br>';
+    //MeuBloco[3] = '<br>';
+    //MeuBloco[4] = '<br>';
+    MeuBloco[2] = 'Tabela do Numero do Calçado';
+    MeuBloco[3] = [
         [{ value: ' ', largura: 4 }, { value: 'Gênero Feminino', largura: 4 }, { value: 'Gênero Masculino', largura: 4 }], //header
         [{ value: 'Mínimo', tipo: 'texto' }, { value: getResp('minCalcadoF'), tipo: 'texto' }, { value: getResp('minCalcadoM'), tipo: 'texto' }],
         [{ value: 'Màximo', tipo: 'texto' }, { value: getResp('maxCalcadoF'), tipo: 'texto' }, { value: getResp('maxCalcadoM'), tipo: 'texto' }],
@@ -328,6 +328,7 @@ function salvaTabela() {
             montaVetoresDados();
 
             $('msg_ok').update("Seus dados foram salvos com sucesso.");
+
             setResp('atividade_1', 3); //Feito
             setResp('atividade_2', 1); //Liberado
             setResp('atividade_3', 1); //Liberado
@@ -362,11 +363,11 @@ function salvaTabela() {
         [{ value: 'Quantil 25%', tipo: 'texto' }, { value: getResp('Q25F'), tipo: 'texto' }, { value: getResp('Q25M'), tipo: 'texto' }],
         [{ value: 'Quantil 75%', tipo: 'texto' }, { value: getResp('Q75F'), tipo: 'texto' }, { value: getResp('Q75M'), tipo: 'texto' }]
     ];
-    MeuBloco[2] = '<br>';
-    MeuBloco[3] = '<br>';
-    MeuBloco[4] = '<br>';
-    MeuBloco[5] = 'Tabela do Numero do Calçado';
-    MeuBloco[6] = [
+    //MeuBloco[2] = '<br>';
+    //MeuBloco[3] = '<br>';
+    //MeuBloco[4] = '<br>';
+    MeuBloco[2] = 'Tabela do Numero do Calçado';
+    MeuBloco[3] = [
         [{ value: ' ', largura: 4 }, { value: 'Gênero Feminino', largura: 4 }, { value: 'Gênero Masculino', largura: 4 }], //header
         [{ value: 'Mínimo', tipo: 'texto' }, { value: getResp('minCalcadoF'), tipo: 'texto' }, { value: getResp('minCalcadoM'), tipo: 'texto' }],
         [{ value: 'Màximo', tipo: 'texto' }, { value: getResp('maxCalcadoF'), tipo: 'texto' }, { value: getResp('maxCalcadoM'), tipo: 'texto' }],

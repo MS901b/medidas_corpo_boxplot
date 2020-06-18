@@ -6,6 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name=viewport content="width=device-width,initial-scale=1">
     <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
     <link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen, projection" title="normal" />
     <link rel="alternate stylesheet" type="text/css" href="css/estilo2.css" title="grande" />
 
@@ -180,22 +181,21 @@
                 var ggbApp = new GGBApplet({
                     "appName": "classic",
                     "width": 519,
-                    "height": 380,
+                    "height": 457,
                     "filename": "applets/boxplot_figura.ggb",
-                    "showResetIcon": "false",
-                    "enableRightClick": "false",
-                    "showMenuBar": "false",
-                    "showToolBar": "false",
-                    "showToolBarHelp": "false",
-                    "showAlgebraInput": "false",
-                    "enableLabelDrags": "false",
-                    "enableShiftDragZoom": "false"
+                    "showResetIcon": false,
+                    "enableRightClick": false,
+                    "showMenuBar": false,
+                    "showToolBar": false,
+                    "showToolBarHelp": false,
+                    "showAlgebraInput": false,
+                    "enableShiftDragZoom": false,
+                    "useBrowserForJS": true
                 }, true);
                 window.addEventListener("load", function() {
                     ggbApp.inject('ggbApplet');
                 });
             </script>
-
             <div class="canto sup_esq"></div>
             <div class="canto sup_dir"></div>
             <div class="canto inf_esq"></div>

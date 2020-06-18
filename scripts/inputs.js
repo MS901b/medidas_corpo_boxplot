@@ -1,10 +1,10 @@
-﻿
+
 Element.addMethods('input',
 {
 	trava: function (element)
 	{
 		element = $(element);
-             // element.fire('input:disable');
+		element.fire('input:disable');
 		element.disabled = true;
 		element.addClassName('desabilitado');
 	},
@@ -34,7 +34,7 @@ Element.addMethods('select',
 	trava: function (element)
 	{
 		element = $(element);
-	     // element.fire('input:disable');
+		element.fire('input:disable');
 		element.addClassName('desabilitado');
 		element.disabled = true;
 	},
@@ -60,9 +60,41 @@ Event.observe(document, 'dom:afterLoaded', function()
 	{
 		var select = new Element('select', {className: 'caracteres_especiais', quais: input.readAttribute('quais')});
 		var padding = eval(input.getStyle('paddingLeft').replace('px', '') + '+' + input.getStyle('paddingRight').replace('px', ''));
-		input.insert({after: select});
+		if(input.next('.depois')) input.next('.depois').insert('&emsp;').insert({after: select});
+		else					  input.insert({after: select});
 		input.setStyle({width: (input.getWidth()-50-padding-4)+'px'});
-		Event.observe(select, 'input:change', function(ev){this.setValue(this.value+Event.element(ev).value);}.bind(input));
+		
+		// Simula o selectionEnd e o selectionStart no IE
+		if(Prototype.Browser.IE)
+		{
+			var seta_selecao = function(ev)
+			{
+				var input = Event.element(ev);
+				var range = document.selection.createRange();
+				var stored_range = range.duplicate();
+				stored_range.expand('textedit');
+				stored_range.setEndPoint('EndToEnd', range);
+				input.selectionStart = stored_range.text.length - range.text.length;
+				input.selectionEnd = input.selectionStart + range.text.length;
+			}.bind(input);
+			input.observe('mouseup', seta_selecao);
+			input.observe('keyup', seta_selecao);
+		}
+		
+		Event.observe(select, 'input:change', function(ev)
+		{
+			if (this.selectionStart || this.selectionStart == "0") {
+				var startPos = this.selectionStart;
+				var endPos = this.selectionEnd;
+				var chaineSql = this.value;
+
+				this.setValue(this.value.substring(0, startPos) + Event.element(ev).value + this.value.substring(endPos, this.value.length));
+			}
+			else
+			{
+				this.setValue(this.value+Event.element(ev).value);
+			}
+		}.bind(input));
 		
 		if(input.disabled)
 			select.trava();
@@ -347,25 +379,27 @@ var Spinner = Class.create({
 
 
 var Select = Class.create({
-	values: null, especial: null, span: null, seta: null, input: null,
 	caracteres:new Hash({
-		mais_ou_menos:	{codigo: "&#177;",	nome: '±'},
-		modulo:			{codigo: "&#124;",	nome: '|'},
-		alfa:			{codigo: "&#945;",	nome: 'α'},
-		beta:			{codigo: "&#946;",	nome: 'β'},
-		gama:			{codigo: "&#947;",	nome: 'γ'},
-		delta:			{codigo: "&#948;",	nome: 'δ'},
-		epsilon:		{codigo: "&#949;",	nome: 'ε'},
-		teta:			{codigo: "&#952;",	nome: 'θ'},
-		lambda:			{codigo: "&#955;",	nome: 'λ'},
-		pi:				{codigo: "&#960;",	nome: 'π'},
-		raiz:			{codigo: "&radic;",	nome: '√'},
-		intersecao:		{codigo: "&cap;",	nome: '∩'},
-		uniao:			{codigo: "&cup;",	nome: '∪'}
+		mais_ou_menos:	{rotulo: "&#177;",	nome: '±'},
+		quadrado:		{rotulo: "&#178;",	nome: '²'},
+		cubo:			{rotulo: "&#179;",	nome: '³'},
+		modulo:			{rotulo: "&#124;",	nome: '|'},
+		alfa:			{rotulo: "&#945;",	nome: 'α'},
+		beta:			{rotulo: "&#946;",	nome: 'β'},
+		gama:			{rotulo: "&#947;",	nome: 'γ'},
+		delta:			{rotulo: "&#948;",	nome: 'δ'},
+		epsilon:		{rotulo: "&#949;",	nome: 'ε'},
+		teta:			{rotulo: "&#952;",	nome: 'θ'},
+		lambda:			{rotulo: "&#955;",	nome: 'λ'},
+		pi:				{rotulo: "&#960;",	nome: 'π'},
+		raiz:			{rotulo: "&radic;",	nome: '√'},
+		intersecao:		{rotulo: "&cap;",	nome: '∩'},
+		uniao:			{rotulo: "&cup;",	nome: '∪'}
 	}),
 	initialize: function (input)
 	{
 		this.values = new Hash();
+		this.acessivel = false;
 		this.divCont = new Element('div', {className: 'select'});
 		this.divCont.insert(this.span  = new Element('span', {className: 'value'}));
 		this.divCont.insert(this.seta  = new Element('a', {className: 'seta', href: 'javascript:;'}).update(' '));
@@ -387,7 +421,7 @@ var Select = Class.create({
 			var especiais = this.input.readAttribute('quais');
 			this.input.writeAttribute({quais: null});
 			
-			if(especiais)	especiais = especiais.split(',');
+			if(especiais)	especiais = especiais.toString().split(',');
 			else			especiais = this.caracteres.keys();
 			
 			for(var a = 0; a < especiais.length; a++)
@@ -396,11 +430,15 @@ var Select = Class.create({
 				dados = this.caracteres.get(qual);
 				
 				if(dados)
-					this.input.insert(new Element('option', {value: dados.nome}).update(dados.codigo));
+					this.input.insert(new Element('option', {value: dados.nome}).update(dados.rotulo));
 				else
 					this.input.insert(new Element('option', {value: 'null'}).update('NÃO ACHEI: '+qual));
 			}
 		}
+		
+		// Poem a classe especial (que faz o select não pegar a correção)
+		if(this.especial || this.input.hasClassName('especial'))
+			this.divCont.addClassName('especial');
 		
 		// Monta as opções
 		var opcoes = this.input.select('option');
@@ -434,7 +472,7 @@ var Select = Class.create({
 			this.divCont.setStyle({marginLeft: '5px'})
 		}
 		
-		Event.observe(this.seta, 'mousedown', function(ev){ev.stop()});
+		// Event.observe(this.seta, 'mousedown', function(ev){ev.stop()});
 		Event.observe(this.seta, 'blur', this.fechaBlur.bind(this));
 		Event.observe(this.seta, 'keydown', this.navega.bind(this));
 		Event.observe(this.input, 'input:disable', this.trava.bind(this));
@@ -459,6 +497,7 @@ var Select = Class.create({
 	},
 	abrefecha: function(ev)
 	{
+		ev.stop();
 		if(this.opcoes.visible())
 			this.fecha(ev);
 		else
@@ -468,9 +507,9 @@ var Select = Class.create({
 	{
 		if(this.input.disabled)
 			return;
-		
 		var left_offset = 2, top_offset = 2;
 		
+		this.acessivel = false;
 		this.opcoes.show();
 		if(this.absolute)
 			this.opcoes.setStyle({
@@ -499,19 +538,11 @@ var Select = Class.create({
 	},
 	fecha: function(ev)
 	{
-		switch(Event.element(ev))
-		{
-			case this.divCont:
-			case this.seta:
-			case this.span:
-				return;
-				break;
-		}
 		this.opcoes.hide();
 	},
 	fechaBlur: function(ev)
 	{
-		if(!ev.isLeftClick())
+		if(this.acessivel)
 			this.opcoes.hide();
 	},
 	navega: function(ev)
@@ -524,6 +555,7 @@ var Select = Class.create({
 				if(!this.opcoes.visible())
 				{
 					this.abre();
+					this.acessivel = true;
 					ev.stop();
 					return;
 				}	
@@ -567,7 +599,7 @@ var Select = Class.create({
 	},
 	atualizaValor: function(ev)
 	{
-		this.span.update(this.values.get(this.input.getValue()));
+		this.span.update().insert(this.values.get(this.input.getValue()));
 	},
 	trava: function()
 	{
@@ -821,7 +853,7 @@ var GgbToolbar = Class.create({
 				this.botaoSelec=numBotao;
 				
 				// Chamada para o geogebra
-				var applet = document.applets[this.idApplet];
+				var applet = document[this.idApplet];
 				applet.setMode(this.botoesCtrl[numBotao].numGgb);
 			}
 	}
