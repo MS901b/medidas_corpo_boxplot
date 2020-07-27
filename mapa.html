@@ -40,27 +40,22 @@
             if (this.resultado == 'sim') {
 
                 $('Mapinha').ApagaTudo('estat2');
-
-                $('Mapinha').Salva(nomeSoft, 'atividade_1', '1');
-                $('Mapinha').Salva(nomeSoft, 'atividade_2', '1');
-                $('Mapinha').Salva(nomeSoft, 'atividade_3', '1');
+                /*
+                 $('Mapinha').Salva(nomeSoft, 'atividade_1', '1');
+                 $('Mapinha').Salva(nomeSoft, 'atividade_2', '0');
+                 $('Mapinha').Salva(nomeSoft, 'atividade_3', '0');*/
 
 
                 var existeTabela = eval(getRespSoft("tabela_principal", "estat-dados"));
+                setRespSoft('atividade_1', 1, 'estat2');
+                setRespSoft('atividade_2', 0, 'estat2');
+                setRespSoft('atividade_3', 0, 'estat2');
 
                 if (existeTabela != null) {
-                    setRespSoft('atividade_1', 1, 'estat2');
-                    setRespSoft('atividade_2', 1, 'estat2');
-                    setRespSoft('atividade_3', 1, 'estat2');
-
                     montaVetoresDados();
                     calculaDadosAltura();
                     calculaDadosCalcado();
-                } else {
-                    setRespSoft('atividade_2', 0, 'estat2');
-                    setRespSoft('atividade_3', 0, 'estat2');
                 }
-
                 location.reload();
             }
         }

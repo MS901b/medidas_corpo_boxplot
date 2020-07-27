@@ -307,7 +307,7 @@ function cb_salvar_tabela() {
 
 function salvaTabela() {
     var array_dados = criaArrayDados();
-    var oldTabela = getRespSoft("tabela_principal", "estat-dados");
+    var oldTabela = getRespSoft("tabela_principal", "estat-dados") || ""
 
     // Verifica se há dados a serem gravados
     if (array_dados.length != 0) {
@@ -329,9 +329,9 @@ function salvaTabela() {
 
             $('msg_ok').update("Seus dados foram salvos com sucesso.");
 
-            setResp('atividade_1', 3); //Feito
-            setResp('atividade_2', 1); //Liberado
-            setResp('atividade_3', 1); //Liberado
+            setResp('atividade_1', 2); //Feito
+            //setResp('atividade_2', 1); //Liberado
+            //setResp('atividade_3', 1); //Liberado
             setRespSoft('tabela_definida', 1, 'estat-dados');
             calculaDadosAltura();
             calculaDadosCalcado();
