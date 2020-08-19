@@ -103,7 +103,7 @@ var Questoes = [{ //Parte 1
                         { value: 'f', label: 'Feminino' },
                         { value: 'i', label: 'Iguais' }
                     ],
-                    msgErro: 'Você pode obter essa informação observando os gráficos no quadro ao lado.'
+                    msgErro: 'Observe nos gráficos ao lado qual possui maior valor máximo.'
                 },
                 { //B
                     tipo: 'multipla_escolha',
@@ -114,7 +114,7 @@ var Questoes = [{ //Parte 1
                         { value: 'f', label: 'Feminino' },
                         { value: 'i', label: 'Iguais' }
                     ],
-                    msgErro: 'Você pode obter essa informação observando os gráficos no quadro ao lado.'
+                    msgErro: 'Observe nos gráficos ao lado qual possui menor valor mínimo.'
                 },
                 { //C
                     tipo: 'input',

@@ -78,41 +78,40 @@
             }
         });
         document.observe('dom:afterPermiteContinuar', function(event) {
-            /*
             var valida = validaTabela();
             switch (valida) {
-            	case 1:		//A tabela tem menos de 10 dados
-            		$('erroNumeroDados').update('<strong>O seu conjunto de dados não contém dez linhas válidas, preencha a tabela até atingir esse valor mínimo.</strong>');
-            		$('erroGenero').update('');
-            		$('dadosSalvos').update('');
-            		permiteContinuar(false);
-            		setResp('automacao_atividade_1_parte_1',0);
-            		gerencia_partes();						
-            		break;
-            		
-            	case 2:		//A tabela nao tem pelo menos 1 de cada genero
-            		$('erroGenero').update('<strong>A tabela deve conter pelo menos um indivíduo de cada gênero, preencha, no mínimo, mais uma linha com o gênero que ainda não apareceu.</strong>');
-            		$('erroNumeroDados').update('');
-            		$('dadosSalvos').update('');
-            		permiteContinuar(false);
-            		setResp('automacao_atividade_1_parte_1',0);
-            		gerencia_partes();						
-            		break;
+                case 1: //A tabela tem menos de 10 dados
+                    $('erroNumeroDados').update('<strong>O seu conjunto de dados não contém dez linhas válidas, preencha a tabela até atingir esse valor mínimo.</strong>');
+                    $('erroGenero').update('');
+                    $('dadosSalvos').update('');
+                    permiteContinuar(false);
+                    setResp('automacao_atividade_1_parte_1', 0);
+                    gerencia_partes();
+                    break;
 
-            	case 3:	//A tabela estah correta
-            		$('dadosSalvos').update('');
-            		$('erroNumeroDados').update('');
-            		$('erroGenero').update('');
-            		permiteContinuar(true);
-            		break;
-            		
-            	default://Nao tem nenhum dado na tabela
-            		permiteContinuar(false);
-            		setResp('automacao_atividade_1_parte_1',0);
-            		gerencia_partes();						
-            		break;
+                case 2: //A tabela nao tem pelo menos 1 de cada genero
+                    $('erroGenero').update('<strong>A tabela deve conter pelo menos um indivíduo de cada gênero, preencha, no mínimo, mais uma linha com o gênero que ainda não apareceu.</strong>');
+                    $('erroNumeroDados').update('');
+                    $('dadosSalvos').update('');
+                    permiteContinuar(false);
+                    setResp('automacao_atividade_1_parte_1', 0);
+                    gerencia_partes();
+                    break;
+
+                case 3: //A tabela estah correta
+                    $('dadosSalvos').update('');
+                    $('erroNumeroDados').update('');
+                    $('erroGenero').update('');
+                    permiteContinuar(true);
+                    break;
+
+                default: //Nao tem nenhum dado na tabela
+                    permiteContinuar(false);
+                    setResp('automacao_atividade_1_parte_1', 0);
+                    gerencia_partes();
+                    break;
             }
-            */
+
         });
     </script>
 
